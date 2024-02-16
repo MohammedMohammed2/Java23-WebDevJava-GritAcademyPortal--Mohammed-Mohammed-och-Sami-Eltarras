@@ -10,16 +10,9 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/Login")
 public class LoginServlet extends HttpServlet {
-    String getmethodattribute =(String)getServletContext().getAttribute("wtf" + "<br>");
-    String servletinitattribute = getServletContext().getInitParameter("wtf2.0" + "<br>");
-    //HttpServletRequest.getSession();
-
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType("text/HTML");
-      resp.getWriter().print(req.getSession().getAttribute("MyName"));
-     // HttpServletResponse.setCookie(new Cookie(String name, Object value));
-
+      req.getRequestDispatcher("/jsp/login.jsp").forward(req,resp);
     }
 }
