@@ -13,16 +13,17 @@ public class RegisterServlet extends HttpServlet {
 
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String address = "";
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
 
         System.out.println("we've posted");
 
-        if (req.getParameter("Register") != null) {
-            address = "Register.jsp";
 
-            req.getRequestDispatcher(address).forward(req, resp);
 
-        }
+            req.getRequestDispatcher("/jsp/register.jsp").forward(req, resp);
+
+
+
     }
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {}
 }
