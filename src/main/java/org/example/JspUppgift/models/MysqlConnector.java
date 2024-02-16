@@ -8,7 +8,7 @@ import java.util.LinkedList;
 
 public class MysqlConnector {
 
-    final private String queriesPath = "src/main/java/org/ServletRedirectExample/models/queries.csv";
+    final private String queriesPath = "src/main/java/org/example/JspUppgift/models/csv.csv";
     private static MysqlConnector connector = null;
 
     private MysqlConnector(){};
