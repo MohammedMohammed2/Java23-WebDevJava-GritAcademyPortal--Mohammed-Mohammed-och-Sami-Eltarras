@@ -16,5 +16,8 @@
             <input type="text" id="lname" name="lname"></input>
             <input type="submit" name="Register" value="Register"></input>
         </form>
+
+        <%@ include file="/jsp/nav.jsp"%>
+        <%@ include file="/jsp/footer.jsp"%>
     </body>
 </html>
