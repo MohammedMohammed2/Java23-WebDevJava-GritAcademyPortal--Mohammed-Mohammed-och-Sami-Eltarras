@@ -50,14 +50,13 @@ public class MysqlConnector {
             ResultSetMetaData md = rs.getMetaData();
             int columnCount = md.getColumnCount();
 
-            //add header row to queryReturn
             String[] headerRow = new String[columnCount];
             for (int i = 1; i <= columnCount; i++) {
                 headerRow[i-1] = md.getColumnName(i);
             }
+
             queryReturn.add(headerRow);
 
-            //add data row to queryReturn
             while (rs.next()){
                 String[] dataRow = new String[columnCount];
                 for (int i = 1; i <= columnCount; i++) {
@@ -96,11 +95,11 @@ public class MysqlConnector {
             PreparedStatement ps = con.prepareStatement(query);
 
             for (int i = 0; i < args.length/2; i++) {
-                System.out.println(i);
-                //if(args[i].equals("")) continue;
+
                 if(args[i+(args.length/2)].equals("S")){
                     ps.setString(i+1,args[i]);
-                }else if(args[i].equals("I")){
+                }
+                else if(args[i].equals("I")){
                     ps.setInt(i+1,Integer.parseInt(args[i]));
                 }
             }
