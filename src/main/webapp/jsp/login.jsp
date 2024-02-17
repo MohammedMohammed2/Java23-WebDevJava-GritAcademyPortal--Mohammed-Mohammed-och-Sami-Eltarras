@@ -10,9 +10,9 @@
     <%@ include file="/jsp/Fragments/header.jsp"%>
         <h1>Hello World from Sign In!</h1>
         <form action="/login" method="POST">
-            <label for="username">First name:</label>
+            <label for="username">Username:</label>
             <input type="text" id="username" name="username"></input>
-            <label for="password">Last name:</label>
+            <label for="password">Password:</label>
             <input type="text" id="password" name="password"></input>
             <input type="submit" name="logIn" value="Log In"></input>
         </form>
