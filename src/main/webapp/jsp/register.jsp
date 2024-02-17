@@ -9,12 +9,12 @@
     <body>
     <%@ include file="/jsp/Fragments/header.jsp"%>
         <h1>Hello World from Register!</h1>
-        <form action="/Register" method="GET">
+        <form action="/register" method="GET">
             <label for="fname">First name:</label>
             <input type="text" id="fname" name="fname"></input>
             <label for="lname">Last name:</label>
             <input type="text" id="lname" name="lname"></input>
-            <input type="submit" name="Register" value="Register"></input>
+            <input type="submit" name="register" value="register"></input>
         </form>
 
 

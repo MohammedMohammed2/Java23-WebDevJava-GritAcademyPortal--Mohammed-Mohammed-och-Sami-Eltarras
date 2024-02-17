@@ -7,13 +7,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
+    <%@ include file="/jsp/Fragments/header.jsp"%>
         <h1>Hello World from Sign In!</h1>
-        <form action="/inputChooser" method="POST">
+        <form action="/login" method="POST">
             <label for="username">First name:</label>
             <input type="text" id="username" name="username"></input>
             <label for="password">Last name:</label>
             <input type="text" id="password" name="password"></input>
             <input type="submit" name="logIn" value="Log In"></input>
         </form>
+         <%@ include file="/jsp/Fragments/footer.jsp"%>
     </body>
 </html>
