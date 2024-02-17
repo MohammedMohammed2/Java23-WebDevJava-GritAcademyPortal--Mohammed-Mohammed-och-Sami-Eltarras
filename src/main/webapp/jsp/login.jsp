@@ -14,8 +14,14 @@
             <input type="text" id="username" name="username"></input>
             <label for="password">Password:</label>
             <input type="text" id="password" name="password"></input>
+                <label for="user_type">Choose a user type:</label>
+                    <select id="user_type" name="user_type">
+                      <option value="student">Student</option>
+                      <option value="teacher">Teacher</option>
+                    </select>
             <input type="submit" name="logIn" value="Log In"></input>
         </form>
+        <p id="errorMessage" style="color:red;">${sessionScope.errorMessage}</p>
          <%@ include file="/jsp/Fragments/footer.jsp"%>
     </body>
 </html>
