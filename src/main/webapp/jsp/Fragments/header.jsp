@@ -5,7 +5,7 @@
 
 <nav id="nav">
     <a href="/index.html" class="class" title="Start">Start</a>
-    <a href="/register" title="Register">Register</a>
-    <a href="/courses" title="Courses">Courses</a>
-    <a href="/login" title="LogIn">Log In</a>
+    <a href="/Register" title="Register">Register</a>
+    <a href="/Courses" title="Courses">Courses</a>
+    <a href="/Login" title="LogIn">Log In</a>
 </nav>

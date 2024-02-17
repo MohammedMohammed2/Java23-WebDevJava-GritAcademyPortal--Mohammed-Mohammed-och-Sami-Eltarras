@@ -6,6 +6,7 @@
     <head>
         <title>Start Page</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <%@ include file="/jsp/Fragments/header.jsp"%>
     </head>
     <body>
         <h1>Hello World from Show Students!</h1>
@@ -21,6 +22,6 @@
 
 
     </table>
-
+    <%@ include file="/jsp/Fragments/footer.jsp"%>
     </body>
 </html>
