@@ -4,10 +4,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Start Page</title>
+        <%@ include file="/jsp/Fragments/header.jsp"%>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
+    <%@ include file="/jsp/Fragments/header.jsp"%>
         <h1>Hello World from Register!</h1>
         <form action="/Register" method="GET">
             <label for="fname">First name:</label>
@@ -17,7 +18,7 @@
             <input type="submit" name="Register" value="Register"></input>
         </form>
 
-        <%@ include file="/jsp/nav.jsp"%>
-        <%@ include file="/jsp/footer.jsp"%>
+
+        <%@ include file="/jsp/Fragments/footer.jsp"%>
     </body>
 </html>
