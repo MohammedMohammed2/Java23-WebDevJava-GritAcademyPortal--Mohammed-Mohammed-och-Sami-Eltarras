@@ -49,6 +49,7 @@ public class LoginServlet extends HttpServlet {
 
                 req.getSession().setAttribute("errorMessage","Student not found");
                 req.getRequestDispatcher("jsp/login.jsp").forward(req, resp);
+
             }
         }else if (userType.equals("teacher")) {
 
