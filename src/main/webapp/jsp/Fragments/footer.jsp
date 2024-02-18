@@ -1,9 +1,8 @@
+<link rel="stylesheet" href="css/style.css">
 
-    <link rel="stylesheet" href="css/style.css">
-
-
-<div>
- <p> Kontakt </p>
-  <p> Adress </p>
-   <p> Support </p>
-  </div>
+<footer>
+<div class="footer">
+  <p>Email: Gritacademy.se</p>
+  <p>Adress: malmo, varnhem</p>
+</div>
+</footer>
