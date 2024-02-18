@@ -9,16 +9,7 @@
 
     <body>
     <%@ include file="/jsp/Fragments/header.jsp"%>
-       <table id="courses table">
-           <c:forEach items="${data}" var="dataPunkt">
-               <tr>
-                   <td>${dataPunkt[0]}</td>
-                   <td>${dataPunkt[1]}</td>
-                   <td>${dataPunkt[2]}</td>
-                   <td>${dataPunkt[3]}</td>
-               </tr>
-           </c:forEach>
-       </table>
+    <%@ include file="/jsp/Fragments/studentfolder/studentpage.jsp"%>
     <%@ include file="Fragments/footer.jsp" %>
     </body>
 </html>
