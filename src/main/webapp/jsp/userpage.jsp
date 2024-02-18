@@ -8,7 +8,6 @@
     </head>
     <%@ include file="Fragments/header.jsp" %>
     <body>
-        <h1>Hello World On your page !</h1>
         <table>
 
              <c:forEach items="${userBean.data }" var="dataPunkt">
