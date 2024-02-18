@@ -6,7 +6,7 @@
         <title>Start Page</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
-    <%@ include file="Fragments/header.jsp" %>
+
     <body>
         <table>
 
