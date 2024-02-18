@@ -4,3 +4,4 @@ login;SELECT * FROM studenter WHERE username='{0}' AND password='{1}';gritacadem
 llogin;SELECT * FROM lärare WHERE username='{0}' AND password='{1}';gritacademy;localhost;3306;user;user
 userpageinfo;SELECT k.id, k.name, k.YHP, k.beskrivning FROM studenter s INNER JOIN student_courses n ON n.student_id=s.id INNER JOIN kurser k ON k.id = n.kurser_id WHERE s.id='{0}';gritacademy;localhost;3306;user;user
 userteacherpage;SELECT k.id, k.name, k.YHP, k.beskrivning FROM lärare s INNER JOIN lärare_courses n ON n.lärare_id=s.id INNER JOIN kurser k ON k.id = n.kurser_id WHERE s.id='{0}';gritacademy;localhost;3306;user;user
+adminteacherpage;SELECT k.id, k.name, k.YHP, k.beskrivning FROM lärare s INNER JOIN lärare_courses n ON n.lärare_id=s.id INNER JOIN kurser k ON k.id = n.kurser_id WHERE s.id='{0}' AND s.privilageType='admin';gritacademy;localhost;3306;user;user
