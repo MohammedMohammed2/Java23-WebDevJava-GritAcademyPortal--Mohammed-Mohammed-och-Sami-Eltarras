@@ -3,3 +3,4 @@ allFromkurser;SELECT id, name, YHP, beskrivning FROM kurser ORDER BY id ASC;grit
 login;SELECT * FROM studenter WHERE username='{0}' AND password='{1}';gritacademy;localhost;3306;user;user
 llogin;SELECT * FROM lärare WHERE username='{0}' AND password='{1}';gritacademy;localhost;3306;user;user
 userpageinfo;SELECT k.id, k.name, k.YHP, k.beskrivning FROM studenter s INNER JOIN student_courses n ON n.student_id=s.id INNER JOIN kurser k ON k.id = n.kurser_id WHERE s.id='{0}';gritacademy;localhost;3306;user;user
+userteacherpage;SELECT k.id, k.name, k.YHP, k.beskrivning FROM lärare s INNER JOIN lärare_courses n ON n.lärare_id=s.id INNER JOIN kurser k ON k.id = n.kurser_id WHERE s.id='{0}';gritacademy;localhost;3306;user;user
