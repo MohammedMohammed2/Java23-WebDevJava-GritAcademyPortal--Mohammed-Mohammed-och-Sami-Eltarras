@@ -9,22 +9,16 @@
 
     <body>
     <%@ include file="/jsp/Fragments/header.jsp"%>
-        <table>
-
-             <c:forEach items="${userBean.data }" var="dataPunkt">
-
-                 <tr>
-                     <td>${dataPunkt[1]}</td>
-                     <td>${ dataPunkt[2] }</td>
-                     <td>${ dataPunkt[3] }</td>
-                     <td>${ dataPunkt[4] }</td>
-                     <td>${ dataPunkt[5] }</td>
-                     <td>${ dataPunkt[6] }</td>
-                 </tr>
-             </c:forEach>
-
-
-         </table>
+       <table id="courses table">
+           <c:forEach items="${data}" var="dataPunkt">
+               <tr>
+                   <td>${dataPunkt[0]}</td>
+                   <td>${dataPunkt[1]}</td>
+                   <td>${dataPunkt[2]}</td>
+                   <td>${dataPunkt[3]}</td>
+               </tr>
+           </c:forEach>
+       </table>
     <%@ include file="Fragments/footer.jsp" %>
     </body>
 </html>
