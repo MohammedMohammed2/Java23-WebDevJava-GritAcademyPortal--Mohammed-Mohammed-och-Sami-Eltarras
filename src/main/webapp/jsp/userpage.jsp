@@ -6,8 +6,9 @@
         <title>Start Page</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
-    <%@ include file="Fragments/header.jsp" %>
+
     <body>
+    <%@ include file="Fragments/header.jsp" %>
         <h1>Hello World On your page !</h1>
         <table>
 
