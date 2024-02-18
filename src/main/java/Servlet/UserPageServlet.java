@@ -35,7 +35,11 @@ public class UserPageServlet extends HttpServlet {
             req.setAttribute("data", data);
             req.getRequestDispatcher("jsp/userpage.jsp").forward(req, resp);
         }
+        else if(userBean.getUserType()== USER_TYPE.teacher && userBean.getprivilageType()== PRIVILAGE_TYPE.admin) {
+            LinkedList<String[]> data = MysqlConnector.getConnector().selectQuery("userteacherpage", ((Userbean) req.getSession().getAttribute("userBean")).getId());
+            req.setAttribute("data", data);
+            req.getRequestDispatcher("jsp/userpage.jsp").forward(req, resp);
+        }
     }
 }
-    //else if (userBean.getUserType()== USER_TYPE.teacher && userBean.getprivilageType()== PRIVILAGE_TYPE.admin) {
 

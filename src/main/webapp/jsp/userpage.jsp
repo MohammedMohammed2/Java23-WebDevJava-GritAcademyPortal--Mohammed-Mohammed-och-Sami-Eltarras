@@ -8,14 +8,20 @@
     </head>
 
     <body>
-     <%@ include file="/jsp/Fragments/header.jsp"%>
+
     <c:choose>
      <c:when test="${userBean.userType == 'student'}">
-        <%@ include file="/jsp/Fragments/studentfolder/studentpage.jsp"%>
+      <%@ include file="/jsp/Fragments/studentfolder/studentnavbar.jsp"%>
+       <%@ include file="/jsp/Fragments/studentfolder/studentpage.jsp"%>
      </c:when>
      <c:when test="${userBean.userType == 'teacher' && userBean.privilageType == 'user'}">
+        <%@ include file="/jsp/Fragments/teacherfolder/teachernav(user).jsp"%>
           <%@ include file="/jsp/Fragments/teacherfolder/teacherpage(user).jsp"%>
      </c:when>
+       <c:when test="${userBean.userType == 'teacher' && userBean.privilageType == 'admin'}">
+             <%@ include file="/jsp/Fragments/teacherfolder/teacheradmin.jsp"%>
+               <%@ include file="/jsp/Fragments/teacherfolder/teacherpage(user).jsp"%>
+          </c:when>
        </c:choose>
     <%@ include file="Fragments/footer.jsp" %>
     </body>
