@@ -30,13 +30,8 @@ public class UserPageServlet extends HttpServlet {
             req.setAttribute("data", data);
             req.getRequestDispatcher("jsp/userpage.jsp").forward(req, resp);
         }
-        if (userBean.getUserType() == USER_TYPE.teacher && userBean.getprivilageType() == PRIVILAGE_TYPE.user) {
+        else if(userBean.getUserType() == USER_TYPE.teacher && userBean.getprivilageType() == PRIVILAGE_TYPE.user) {
             LinkedList<String[]> data = MysqlConnector.getConnector().selectQuery("userteacherpage", ((Userbean) req.getSession().getAttribute("userBean")).getId());
-            req.setAttribute("data", data);
-            req.getRequestDispatcher("jsp/userpage.jsp").forward(req, resp);
-        }
-        else {
-            LinkedList<String[]> data = MysqlConnector.getConnector().selectQuery("userpageinfo", ((Userbean) req.getSession().getAttribute("userBean")).getId());
             req.setAttribute("data", data);
             req.getRequestDispatcher("jsp/userpage.jsp").forward(req, resp);
         }

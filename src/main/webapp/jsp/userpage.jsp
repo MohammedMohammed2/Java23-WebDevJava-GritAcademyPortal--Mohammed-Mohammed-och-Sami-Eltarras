@@ -13,7 +13,7 @@
      <c:when test="${userBean.userType == 'student'}">
         <%@ include file="/jsp/Fragments/studentfolder/studentpage.jsp"%>
      </c:when>
-     <c:when test="${userBean.userType == 'teacher' && userBean.privilagetype == 'user'}">
+     <c:when test="${userBean.userType == 'teacher' && userBean.privilageType == 'user'}">
           <%@ include file="/jsp/Fragments/teacherfolder/teacherpage(user).jsp"%>
      </c:when>
        </c:choose>
