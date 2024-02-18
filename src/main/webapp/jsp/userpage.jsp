@@ -8,6 +8,7 @@
     </head>
 
     <body>
+    <%@ include file="/jsp/Fragments/header.jsp"%>
         <table>
 
              <c:forEach items="${userBean.data }" var="dataPunkt">
