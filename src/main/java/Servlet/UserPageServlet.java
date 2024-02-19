@@ -28,7 +28,7 @@ public class UserPageServlet extends HttpServlet {
         if (userBean.getUserType() == USER_TYPE.student) {
 
 
-            LinkedList<String[]> data = MysqlConnector.getConnector().selectQuery("allPeopleInCourse", ((Userbean) req.getSession().getAttribute("userBean")).getId());
+            LinkedList<String[]> data = MysqlConnector.getConnector().selectQuery("allStudentInCoursesAndTeachers", ((Userbean) req.getSession().getAttribute("userBean")).getId());
 
 
             req.setAttribute("data", data);
