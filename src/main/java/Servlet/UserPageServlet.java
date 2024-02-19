@@ -40,6 +40,7 @@ public class UserPageServlet extends HttpServlet {
             req.setAttribute("data", data);
             req.getRequestDispatcher("jsp/userpage.jsp").forward(req, resp);
         }
+
     }
 }
 
