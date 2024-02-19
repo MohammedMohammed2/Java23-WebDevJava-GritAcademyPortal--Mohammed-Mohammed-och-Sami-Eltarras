@@ -61,7 +61,7 @@ public class LoginServlet extends HttpServlet {
                 req.getRequestDispatcher("jsp/login.jsp").forward(req, resp);
             }
         } else {
-            req.getRequestDispatcher("JSP/login.jsp").forward(req, resp);
+            req.getRequestDispatcher("jsp/login.jsp").forward(req, resp);
         }
     }
     private PRIVILAGE_TYPE resolvePrivilageType (String privilageType){

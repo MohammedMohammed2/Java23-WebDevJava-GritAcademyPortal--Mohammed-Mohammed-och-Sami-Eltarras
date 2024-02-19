@@ -8,7 +8,9 @@
     </head>
     <body>
     <%@ include file="/jsp/Fragments/header.jsp"%>
+
         <h1>Hello World from Sign In!</h1>
+
         <form action="/login" method="POST">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username"></input>
@@ -21,7 +23,9 @@
                     </select>
             <input type="submit" name="logIn" value="Log In"></input>
         </form>
+
         <p id="errorMessage" style="color:red;">${sessionScope.errorMessage}</p>
+
          <%@ include file="/jsp/Fragments/footer.jsp"%>
     </body>
 </html>
