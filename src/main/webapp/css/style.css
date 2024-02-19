@@ -47,6 +47,12 @@ h1{text-align:center;}
     background-color: #333;
     width: 500px;
 }
+.bodyimage{
+     background-image:url('/img/schoolmge.jpg');
+     background-repeat: no-repeat;
+      background-size: 1300px 500px;
+
+    }
 
 footer {
     position: fixed;

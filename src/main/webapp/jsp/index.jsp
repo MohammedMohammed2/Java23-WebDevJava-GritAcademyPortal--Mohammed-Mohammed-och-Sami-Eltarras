@@ -3,10 +3,8 @@
 <!DOCTYPE html>
 <html>
 <%@ include file="Fragments/header.jsp" %>
-<body >
-<img src="C:\Users\sahar\OneDrive\Skrivbord" alt="schoolmge" >
+<body class="bodyimage"  >
 <%@ include file="Fragments/body.jsp"%>
-
 <%@ include file="Fragments/footer.jsp" %>
 </body>
 </html>
