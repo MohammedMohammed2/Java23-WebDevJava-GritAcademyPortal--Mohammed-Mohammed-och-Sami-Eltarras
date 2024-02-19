@@ -32,7 +32,6 @@ public class LoginServlet extends HttpServlet {
         String userType = req.getParameter("user_type");
 
 
-
         if (userType.equals("student")) {
 
             LinkedList<String[]> data = MysqlConnector.getConnector().selectQuery("login", username, password);
@@ -43,27 +42,37 @@ public class LoginServlet extends HttpServlet {
                 Userbean userBean = new Userbean((data.get(1))[0], USER_TYPE.student, PRIVILAGE_TYPE.user, STATE_TYPE.confirmed);
 
                 req.getSession().setAttribute("userBean", userBean);
-                req.getRequestDispatcher("/userpage").forward(req,resp);
-            }
-            else{
+                req.getRequestDispatcher("/userpage").forward(req, resp);
+            } else {
 
-                req.getSession().setAttribute("errorMessage","Student not found");
+                req.getSession().setAttribute("errorMessage", "Student not found");
                 req.getRequestDispatcher("jsp/login.jsp").forward(req, resp);
-
             }
-        }
-        else if (userType.equals("teacher")) {
+
+        } else if (userType.equals("teacher")) {
             LinkedList<String[]> data = MysqlConnector.getConnector().selectQuery("llogin", username, password);
 
             if (data.size() > 1) {
-                Userbean userBean = new Userbean((data.get(1))[0], USER_TYPE.teacher, PRIVILAGE_TYPE.user, STATE_TYPE.confirmed);
+                Userbean userBean = new Userbean((data.get(1))[0], USER_TYPE.teacher, resolvePrivilageType(data.get(1)[8]), STATE_TYPE.confirmed);
                 req.getSession().setAttribute("userBean", userBean);
-                req.getRequestDispatcher("/userpage").forward(req,resp);
+                req.getRequestDispatcher("/userpage").forward(req, resp);
+            } else {
+                req.getSession().setAttribute("errorMessage", "Teacher not found");
+                req.getRequestDispatcher("jsp/login.jsp").forward(req, resp);
             }
-            else
-            {
-                req.getRequestDispatcher("jsp/login.jsp").forward(req,resp);
-            }
+        } else {
+            req.getRequestDispatcher("JSP/login.jsp").forward(req, resp);
+        }
+    }
+
+
+    private PRIVILAGE_TYPE resolvePrivilageType (String privilageType){
+        if (privilageType.equals("user")) {
+            return PRIVILAGE_TYPE.user;
+        } else if (privilageType.equals("admin")) {
+            return PRIVILAGE_TYPE.admin;
+        } else {
+            return null;
         }
     }
 }
