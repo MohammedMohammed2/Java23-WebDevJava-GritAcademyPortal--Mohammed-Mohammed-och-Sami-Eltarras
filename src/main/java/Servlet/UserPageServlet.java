@@ -32,10 +32,18 @@ public class UserPageServlet extends HttpServlet {
 
         else if (userBean.getUserType() == USER_TYPE.student) {
 
-            LinkedList<String[]> data = MysqlConnector.getConnector().selectQuery("allStudentInCoursesAndTeachers", ((Userbean) req.getSession().getAttribute("userBean")).getId());
+            LinkedList<String[]> data = null;
+            LinkedList<String[]> AllStudentsInCourse= MysqlConnector.getConnector().selectQuery("allStudentInCoursesAndTeachers", ((Userbean) req.getSession().getAttribute("userBean")).getId());
 
+            if(req.getParameter("studentSubmitButton")!=null){
+                data = MysqlConnector.getConnector().selectQuery("allStudentInCourse",req.getParameter("courseId"));
+
+            }else {
+                data = AllStudentsInCourse;
+            }
 
             req.setAttribute("data", data);
+            req.setAttribute("AllStudentsInCourse",AllStudentsInCourse);
             req.getSession().setMaxInactiveInterval(360);
             req.getRequestDispatcher("jsp/userpage.jsp").forward(req, resp);
 
