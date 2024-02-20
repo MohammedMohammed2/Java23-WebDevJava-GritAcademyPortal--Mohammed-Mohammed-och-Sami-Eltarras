@@ -43,7 +43,7 @@ public class UserPageServlet extends HttpServlet {
 
         else if(userBean.getUserType() == USER_TYPE.teacher && userBean.getprivilageType() == PRIVILAGE_TYPE.user) {
 
-            LinkedList<String[]> data = MysqlConnector.getConnector().selectQuery("userteacherpage", ((Userbean) req.getSession().getAttribute("userBean")).getId());
+            LinkedList<String[]> data = MysqlConnector.getConnector().selectQuery("allStudentInCourse", ((Userbean) req.getSession().getAttribute("userBean")).getId());
 
             req.setAttribute("data", data);
             req.getRequestDispatcher("jsp/userpage.jsp").forward(req, resp);
