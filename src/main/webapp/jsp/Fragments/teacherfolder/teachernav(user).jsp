@@ -9,5 +9,3 @@
         <li><a href="/logout" title="logout">Log Out</a></li>
     </ul>
 </nav>
-
-<h1> Welcome teacher </h1>
