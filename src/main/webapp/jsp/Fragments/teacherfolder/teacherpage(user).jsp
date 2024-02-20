@@ -1,5 +1,5 @@
-
-   <table id="courses table">
+<link rel="stylesheet" href="css/style.css">
+   <table class="tablestyle">
            <c:forEach items="${data}" var="dataPunkt">
                <tr>
                    <td>${dataPunkt[0]}</td>

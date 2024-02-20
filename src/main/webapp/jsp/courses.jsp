@@ -11,7 +11,8 @@
     <%@ include file="/jsp/Fragments/header.jsp"%>
         <h1>Hello World from Show Students!</h1>
         <h3>${param.message}</h3>
-    <table>
+
+    <table class="tablestyle" >
 
         <c:forEach items="${usersBean.data }" var="dataPunkt">
 
