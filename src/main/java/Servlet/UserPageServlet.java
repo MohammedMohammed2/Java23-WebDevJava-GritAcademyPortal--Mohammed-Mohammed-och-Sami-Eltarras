@@ -29,8 +29,8 @@ public class UserPageServlet extends HttpServlet {
 
         else if (userBean.getUserType() == USER_TYPE.student && userBean.getprivilageType() == PRIVILAGE_TYPE.user && userBean.getStateType() == STATE_TYPE.confirmed) {
 
+            LinkedList<String[]> AllStudentsInCourse = MysqlConnector.getConnector().selectQuery("allStudentInCoursesAndTeachers", ((Userbean) req.getSession().getAttribute("userBean")).getId());
             LinkedList<String[]> data = null;
-            LinkedList<String[]> AllStudentsInCourse= MysqlConnector.getConnector().selectQuery("allStudentInCoursesAndTeachers", ((Userbean) req.getSession().getAttribute("userBean")).getId());
 
             if(req.getParameter("studentSubmitButton")!=null){
                 data = MysqlConnector.getConnector().selectQuery("allStudentInCourse",req.getParameter("courseId"));
