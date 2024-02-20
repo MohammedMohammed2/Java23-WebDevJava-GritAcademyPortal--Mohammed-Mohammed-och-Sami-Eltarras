@@ -17,22 +17,24 @@ import java.util.LinkedList;
 public class UserPageServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/jsp/userpage.jsp").forward(req, resp);
+        doPost(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         Userbean userBean = (Userbean) req.getSession().getAttribute("userBean");
 
 
         if (userBean.getUserType() == USER_TYPE.student) {
 
-
             LinkedList<String[]> data = MysqlConnector.getConnector().selectQuery("allStudentInCoursesAndTeachers", ((Userbean) req.getSession().getAttribute("userBean")).getId());
 
 
             req.setAttribute("data", data);
+            req.getSession().setMaxInactiveInterval(360);
             req.getRequestDispatcher("jsp/userpage.jsp").forward(req, resp);
+
         }
 
         else if(userBean.getUserType() == USER_TYPE.teacher && userBean.getprivilageType() == PRIVILAGE_TYPE.user) {
