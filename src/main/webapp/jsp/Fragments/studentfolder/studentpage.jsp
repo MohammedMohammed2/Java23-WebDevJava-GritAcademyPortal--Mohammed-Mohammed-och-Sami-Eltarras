@@ -1,4 +1,4 @@
-     <body class="bodyimage">
+
      <table id="data table">
          <c:forEach items="${data}" var="dataPunkt">
               <tr>
@@ -8,4 +8,3 @@
               </tr>
          </c:forEach>
      </table>
-     </body>

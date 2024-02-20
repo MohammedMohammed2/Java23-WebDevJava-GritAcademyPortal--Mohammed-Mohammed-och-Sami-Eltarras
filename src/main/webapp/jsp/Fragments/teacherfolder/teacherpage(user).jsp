@@ -1,3 +1,4 @@
+
    <table id="courses table">
            <c:forEach items="${data}" var="dataPunkt">
                <tr>
