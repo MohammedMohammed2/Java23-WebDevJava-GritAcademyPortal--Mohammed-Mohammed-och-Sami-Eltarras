@@ -10,17 +10,17 @@
     <body class="bodyimage">
 
     <c:choose>
-     <c:when test="${userBean.userType == 'student'}">
+     <c:when test="${userBean.userType == 'student' && userBean.stateType == 'confirmed'}">
 
       <%@ include file="/jsp/Fragments/studentfolder/studentnavbar.jsp"%>
        <%@ include file="/jsp/Fragments/studentfolder/studentpage.jsp"%>
 
      </c:when>
-     <c:when test="${userBean.userType == 'teacher' && userBean.privilageType == 'user'}">
+     <c:when test="${userBean.userType == 'teacher' && userBean.privilageType == 'user' && userBean.stateType == 'confirmed'}">
         <%@ include file="/jsp/Fragments/teacherfolder/teachernav(user).jsp"%>
           <%@ include file="/jsp/Fragments/teacherfolder/teacherpage(user).jsp"%>
      </c:when>
-       <c:when test="${userBean.userType == 'teacher' && userBean.privilageType == 'admin'}">
+       <c:when test="${userBean.userType == 'teacher' && userBean.privilageType == 'admin' && userBean.stateType == 'confirmed'}">
              <%@ include file="/jsp/Fragments/teacherfolder/teacheradmin.jsp"%>
                <%@ include file="/jsp/Fragments/teacherfolder/teacherpage(user).jsp"%>
           </c:when>
