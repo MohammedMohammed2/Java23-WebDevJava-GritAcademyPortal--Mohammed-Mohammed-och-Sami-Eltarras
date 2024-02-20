@@ -2,11 +2,12 @@
 
 
 
-<nav id="nav">
+<nav id="navBar">
     <ul>
-       <li> <a href="/home" class="class" title="Start">Start</a></li>
-       <li> <a href="/courses" title="courses">Courses</a></li>
-       <li> <a href="/userpage" title="userpage">userpage</a></li>
+       <li> <a href="/showStudents" title="studenter">All students</a></li>
+       <li> <a href="/courses" title="courses">All courses</a></li>
+       <li> <a href="/userpage" title="userpage"> Courses for specific student</a></li>
+       <li> <a href="/userpage" title="userpage"> All students and teachers for specific course</a></li>
         <li><a href="/logout" title="logout">Log Out</a></li>
     </ul>
 </nav>
