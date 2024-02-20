@@ -1,7 +1,5 @@
 <link rel="stylesheet" href="css/style.css">
 
-
-
 <nav id="navBar">
     <ul>
        <li> <a href="/showStudents" title="studenter">All students</a></li>
