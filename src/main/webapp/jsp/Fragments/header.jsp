@@ -6,5 +6,6 @@
        <li> <a href="/courses" title="courses">Courses</a></li>
         <li> <a href="/userpage" title="userpage">userpage</a></li>
         <li><a href="/login" title="login">Log In</a></li>
+
     </ul>
 </nav>

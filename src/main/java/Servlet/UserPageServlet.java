@@ -26,7 +26,11 @@ public class UserPageServlet extends HttpServlet {
         Userbean userBean = (Userbean) req.getSession().getAttribute("userBean");
 
 
-        if (userBean.getUserType() == USER_TYPE.student) {
+        if (userBean==null){
+            req.getRequestDispatcher("jsp/login.jsp").forward(req, resp);
+        }
+
+        else if (userBean.getUserType() == USER_TYPE.student) {
 
             LinkedList<String[]> data = MysqlConnector.getConnector().selectQuery("allStudentInCoursesAndTeachers", ((Userbean) req.getSession().getAttribute("userBean")).getId());
 
@@ -46,6 +50,7 @@ public class UserPageServlet extends HttpServlet {
 
         }
 
+
         else if(userBean.getUserType()== USER_TYPE.teacher && userBean.getprivilageType()== PRIVILAGE_TYPE.admin) {
 
             LinkedList<String[]> data = MysqlConnector.getConnector().selectQuery("adminteacherpage", ((Userbean) req.getSession().getAttribute("userBean")).getId());
@@ -54,7 +59,6 @@ public class UserPageServlet extends HttpServlet {
             req.getRequestDispatcher("jsp/userpage.jsp").forward(req, resp);
 
         }
-
     }
 }
 
