@@ -1,6 +1,9 @@
 package Servlet;
 
-import org.example.JspUppgift.models.*;
+import org.example.JspUppgift.models.MysqlConnector;
+import org.example.JspUppgift.models.PRIVILAGE_TYPE;
+import org.example.JspUppgift.models.USER_TYPE;
+import org.example.JspUppgift.models.Userbean;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,15 +30,10 @@ public class UserPageServlet extends HttpServlet {
             req.getRequestDispatcher("jsp/login.jsp").forward(req, resp);
         }
 
-<<<<<<< HEAD
         else if (userBean.getUserType() == USER_TYPE.student) {
 
             LinkedList<String[]> data = null;
             LinkedList<String[]> AllStudentsInCourse= MysqlConnector.getConnector().selectQuery("allStudentInCoursesAndTeachers", ((Userbean) req.getSession().getAttribute("userBean")).getId());
-=======
-        else if (userBean.getUserType() == USER_TYPE.student && userBean.getStateType() == STATE_TYPE.confirmed) {
-            LinkedList<String[]> data = MysqlConnector.getConnector().selectQuery("allStudentInCoursesAndTeachers", ((Userbean) req.getSession().getAttribute("userBean")).getId());
->>>>>>> f65b906c062f8ce567295e091aa396d5f2f13110
 
             if(req.getParameter("studentSubmitButton")!=null){
                 data = MysqlConnector.getConnector().selectQuery("allStudentInCourse",req.getParameter("courseId"));
@@ -51,7 +49,7 @@ public class UserPageServlet extends HttpServlet {
 
         }
 
-        else if(userBean.getUserType() == USER_TYPE.teacher && userBean.getprivilageType() == PRIVILAGE_TYPE.user && userBean.getStateType() == STATE_TYPE.confirmed) {
+        else if(userBean.getUserType() == USER_TYPE.teacher && userBean.getprivilageType() == PRIVILAGE_TYPE.user) {
 
             LinkedList<String[]> data = MysqlConnector.getConnector().selectQuery("allStudentInCourse", ((Userbean) req.getSession().getAttribute("userBean")).getId());
 
@@ -61,7 +59,7 @@ public class UserPageServlet extends HttpServlet {
         }
 
 
-        else if(userBean.getUserType()== USER_TYPE.teacher && userBean.getprivilageType()== PRIVILAGE_TYPE.admin && userBean.getStateType() == STATE_TYPE.confirmed) {
+        else if(userBean.getUserType()== USER_TYPE.teacher && userBean.getprivilageType()== PRIVILAGE_TYPE.admin) {
 
             LinkedList<String[]> data = MysqlConnector.getConnector().selectQuery("adminteacherpage", ((Userbean) req.getSession().getAttribute("userBean")).getId());
 
