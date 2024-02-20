@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     </head>
-    <body>
+    <body class="bodyimage">
     <%@ include file="/jsp/Fragments/header.jsp"%>
          <%@ include file="/jsp/Fragments/teacherfolder/teachernav(user).jsp"%>
           <%@ include file="/jsp/Fragments/teacherfolder/teacherpage(user).jsp"%>
