@@ -7,7 +7,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     </head>
-    <body>
+    <body class="bodyimage" >
     <%@ include file="/jsp/Fragments/header.jsp"%>
         <h1>Hello World from Show Students!</h1>
         <h3>${param.message}</h3>
