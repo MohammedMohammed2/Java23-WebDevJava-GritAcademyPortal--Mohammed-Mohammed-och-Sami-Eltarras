@@ -7,6 +7,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body class="bodyimage">
+
     <%@ include file="/jsp/Fragments/header.jsp"%>
         <h1>Hello World from Register!</h1>
         <form action="/register" method="GET">
@@ -16,8 +17,6 @@
             <input type="text" id="lname" name="lname"></input>
             <input type="submit" name="register" value="register"></input>
         </form>
-
-
         <%@ include file="/jsp/Fragments/footer.jsp"%>
     </body>
 </html>
