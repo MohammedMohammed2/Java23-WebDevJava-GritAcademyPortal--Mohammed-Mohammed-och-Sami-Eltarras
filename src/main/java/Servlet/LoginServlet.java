@@ -40,17 +40,20 @@ public class LoginServlet extends HttpServlet {
         if (userType.equals("student")) {
 
 
-            //puts the username and password 
+            //puts the username and password in a quary to see if they entered the right info
             LinkedList<String[]> data = MysqlConnector.getConnector().selectQuery("login", username, password);
 
-
+            //if the username and password are vaild then they will log in successfully
             if (data.size() > 1) {
 
                 Userbean userBean = new Userbean((data.get(1))[0], USER_TYPE.student, PRIVILAGE_TYPE.user, STATE_TYPE.confirmed);
 
                 req.getSession().setAttribute("userBean", userBean);
                 req.getRequestDispatcher("/userpage").forward(req, resp);
-            } else {
+
+            }
+            //if the username and password is wrong then this will display an error message
+            else {
 
 
                 req.getSession().setAttribute("errorMessage", "Student not found");
