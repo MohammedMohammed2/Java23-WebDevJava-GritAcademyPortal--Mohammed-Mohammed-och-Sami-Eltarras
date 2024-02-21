@@ -1,7 +1,6 @@
 package Servlet;
 
-import org.example.JspUppgift.models.MysqlConnector;
-import org.example.JspUppgift.models.Userbean;
+import org.example.JspUppgift.models.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,14 +14,30 @@ import java.util.LinkedList;
 public class StudentsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //makes sure that if the user is already logged in they cant log in again , instead it will show their user page
+        if (req.getSession().getAttribute("stateType") == STATE_TYPE.anonymous){
+            req.getRequestDispatcher("jsp/login.jsp").forward(req,resp);
+        }
+        else {
+            doPost(req,resp);
+        }
 
-        LinkedList data = MysqlConnector.getConnector().selectQuery("allFromstudenter");
-        Userbean usersBean = new Userbean();
-        usersBean.setData(data);
+    }
 
-        req.getSession().setAttribute("usersBean", usersBean);
-        System.out.println(((Userbean)(req.getSession().getAttribute("usersBean"))).getData());
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        Userbean userBean = (Userbean) req.getSession().getAttribute("userBean");
+
+        if(userBean.getUserType() == USER_TYPE.teacher && userBean.getprivilageType() == PRIVILAGE_TYPE.user && userBean.getStateType() == STATE_TYPE.confirmed){
+
+            LinkedList data = MysqlConnector.getConnector().selectQuery("allFromstudenter");
+            userBean.setData(data);
+
+        req.getSession().setAttribute("userBean", userBean);
+        System.out.println(((Userbean)(req.getSession().getAttribute("userBean"))).getData());
         req.getRequestDispatcher("/jsp/students.jsp").forward(req, resp);
+        }
     }
 }
 
