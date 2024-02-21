@@ -1,5 +1,7 @@
 package Servlet;
 
+import org.example.JspUppgift.models.STATE_TYPE;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,6 +17,7 @@ public class LogoutServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         req.getSession().invalidate();
-        resp.sendRedirect("/home");
+        getServletContext().setAttribute("stateType", STATE_TYPE.anonymous);
+        resp.sendRedirect("/userpage");
     }
 }
