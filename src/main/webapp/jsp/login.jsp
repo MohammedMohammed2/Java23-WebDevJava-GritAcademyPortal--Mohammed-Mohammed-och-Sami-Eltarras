@@ -23,8 +23,9 @@
                     </select>
             <input type="submit" name="logIn" value="Log In"></input>
         </form>
+         <p id="errorMessage" style="color:red;">${sessionScope.errorMessage}</p>
     </div>
-        <p id="errorMessage" style="color:red;">${sessionScope.errorMessage}</p>
+
          <%@ include file="/jsp/Fragments/footer.jsp"%>
     </body>
 </html>
