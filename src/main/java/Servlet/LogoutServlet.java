@@ -18,6 +18,6 @@ public class LogoutServlet extends HttpServlet {
 
         req.getSession().invalidate();
         getServletContext().setAttribute("stateType", STATE_TYPE.anonymous);
-        resp.sendRedirect("/userpage");
+        resp.sendRedirect("/login");
     }
 }
