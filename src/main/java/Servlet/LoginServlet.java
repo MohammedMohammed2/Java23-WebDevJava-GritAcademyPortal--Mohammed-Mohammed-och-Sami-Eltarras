@@ -18,22 +18,29 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        req.getSession().setAttribute("errorMessage","");
-        req.getRequestDispatcher("/jsp/login.jsp").forward(req,resp);
-
+        //makes sure that if the user is already logged in they cant log in again , instead it will show their user page
+        if (req.getSession().getAttribute("stateType") == STATE_TYPE.anonymous){
+            req.getRequestDispatcher("jsp/login.jsp").forward(req,resp);}
+        else{
+            req.getRequestDispatcher("/userpage").forward(req, resp);
+            req.getSession().setAttribute("errorMessage","");}
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
 
+        //variables for username and password to login
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         String userType = req.getParameter("user_type");
 
 
+        //if the user selects student
         if (userType.equals("student")) {
 
+
+            //puts the username and password 
             LinkedList<String[]> data = MysqlConnector.getConnector().selectQuery("login", username, password);
 
 
