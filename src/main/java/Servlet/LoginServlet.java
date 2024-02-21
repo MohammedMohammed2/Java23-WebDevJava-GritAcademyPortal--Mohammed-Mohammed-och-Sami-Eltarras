@@ -57,7 +57,7 @@ public class LoginServlet extends HttpServlet {
 
             if (data.size() > 1) {
 
-                Userbean userBean = new Userbean((data.get(1))[0], USER_TYPE.teacher, resolvePrivilageType(data.get(1)[8]), STATE_TYPE.confirmed);
+                Userbean userBean = new Userbean((data.get(1))[0], USER_TYPE.teacher, PRIVILAGE_TYPE.user , STATE_TYPE.confirmed);
                 req.getSession().setAttribute("userBean", userBean);
                 req.getRequestDispatcher("/userpage").forward(req, resp);
             }
@@ -70,15 +70,6 @@ public class LoginServlet extends HttpServlet {
         }
         else {
             req.getRequestDispatcher("jsp/login.jsp").forward(req, resp);
-        }
-    }
-    private PRIVILAGE_TYPE resolvePrivilageType (String privilageType){
-        if (privilageType.equals("user")) {
-            return PRIVILAGE_TYPE.user;
-        } else if (privilageType.equals("admin")) {
-            return PRIVILAGE_TYPE.admin;
-        } else {
-            return null;
         }
     }
 }

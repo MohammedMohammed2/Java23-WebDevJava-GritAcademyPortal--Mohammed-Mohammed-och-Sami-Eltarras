@@ -20,10 +20,6 @@
         <%@ include file="/jsp/Fragments/teacherfolder/teachernav(user).jsp"%>
           <%@ include file="/jsp/Fragments/teacherfolder/teacherpage(user).jsp"%>
      </c:when>
-       <c:when test="${userBean.userType == 'teacher' && userBean.privilageType == 'admin' && userBean.stateType == 'confirmed'}">
-             <%@ include file="/jsp/Fragments/teacherfolder/teacheradmin.jsp"%>
-               <%@ include file="/jsp/Fragments/teacherfolder/teacherpage(user).jsp"%>
-          </c:when>
        </c:choose>
     <%@ include file="Fragments/footer.jsp" %>
     </body>
