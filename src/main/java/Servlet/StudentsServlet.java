@@ -43,7 +43,7 @@ public class StudentsServlet extends HttpServlet {
             req.getSession().setAttribute("usersBean", userBean);System.out.println(((Userbean)(req.getSession().getAttribute("usersBean"))).getData());
             req.getRequestDispatcher("/jsp/students.jsp").forward(req, resp);
         }
-       
+
         else if(userBean.getUserType() == USER_TYPE.student && userBean.getprivilageType() == PRIVILAGE_TYPE.user && userBean.getStateType() == STATE_TYPE.confirmed){
             req.getRequestDispatcher("/jsp/Fragments/badBoys/naughtyBoy.jsp").forward(req, resp);
         }
