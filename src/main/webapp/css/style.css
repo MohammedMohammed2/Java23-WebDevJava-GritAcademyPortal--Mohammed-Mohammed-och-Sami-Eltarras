@@ -89,6 +89,9 @@ button {
   cursor: pointer;
 }
 
+button:hover {
+background-color: #111;
+}
 
 .CN {
     font-family: 'DejaVuSansMonoOblique';
