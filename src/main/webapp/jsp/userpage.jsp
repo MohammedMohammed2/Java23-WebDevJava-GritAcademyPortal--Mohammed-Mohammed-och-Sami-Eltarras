@@ -5,16 +5,15 @@
     <head>
         <title>Start Page</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <%@ include file="Fragments/header.jsp" %>
     <body class="bodyimage">
 
     <c:choose>
      <c:when test="${userBean.userType == 'student' && userBean.stateType == 'confirmed'}">
-
       <%@ include file="/jsp/Fragments/studentfolder/studentnavbar.jsp"%>
        <%@ include file="/jsp/Fragments/studentfolder/studentpage.jsp"%>
-
      </c:when>
      <c:when test="${userBean.userType == 'teacher' && userBean.privilageType == 'user' && userBean.stateType == 'confirmed'}">
         <%@ include file="/jsp/Fragments/teacherfolder/teachernav(user).jsp"%>

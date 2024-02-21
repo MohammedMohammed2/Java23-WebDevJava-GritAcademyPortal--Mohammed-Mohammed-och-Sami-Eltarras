@@ -4,9 +4,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body class="bodyimage">
     <%@ include file="/jsp/Fragments/header.jsp"%>
@@ -23,10 +22,7 @@
                 <td>${dataPunkt[1]}</td><td>${ dataPunkt[2] }</td>
             </tr>
         </c:forEach>
-
-
     </table>
-            <%@ include file="/jsp/Fragments/footer.jsp"%>
-
+        <%@ include file="/jsp/Fragments/footer.jsp"%>
     </body>
 </html>

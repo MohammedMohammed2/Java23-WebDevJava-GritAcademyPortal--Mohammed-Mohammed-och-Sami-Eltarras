@@ -5,13 +5,13 @@
     <head>
         <title>Start Page</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body class="bodyimage">
     <%@ include file="/jsp/Fragments/header.jsp"%>
 
-        <h1>Hello World from Sign In!</h1>
-
-        <form action="/login" method="POST">
+    <div>
+       <form action="/login" method="POST">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username"></input>
             <label for="password">Password:</label>
@@ -23,9 +23,8 @@
                     </select>
             <input type="submit" name="logIn" value="Log In"></input>
         </form>
-
+    </div>
         <p id="errorMessage" style="color:red;">${sessionScope.errorMessage}</p>
-
          <%@ include file="/jsp/Fragments/footer.jsp"%>
     </body>
 </html>

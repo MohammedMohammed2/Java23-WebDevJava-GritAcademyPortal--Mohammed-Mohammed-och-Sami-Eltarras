@@ -5,22 +5,16 @@
 <html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body class="bodyimage" >
     <%@ include file="/jsp/Fragments/header.jsp"%>
-
-    <link rel="stylesheet" href="css/style.css">
     <table>
-
-        <c:forEach items="${usersBean.data }" var="dataPunkt">
-
+       <c:forEach items="${usersBean.data }" var="dataPunkt">
             <tr>
                 <td>${dataPunkt[1]}</td><td>${ dataPunkt[2] }</td><td>${ dataPunkt[3] }</td>
             </tr>
-        </c:forEach>
-
-
+       </c:forEach>
     </table>
     <%@ include file="/jsp/Fragments/footer.jsp"%>
     </body>
