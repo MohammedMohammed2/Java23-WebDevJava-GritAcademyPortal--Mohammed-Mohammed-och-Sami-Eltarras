@@ -9,6 +9,17 @@
     </head>
     <body class="bodyimage" >
     <%@ include file="/jsp/Fragments/header.jsp"%>
+
+    <c:choose>
+         <c:when test="${userBean.userType == 'student' && userBean.stateType == 'confirmed'}">
+          <%@ include file="/jsp/Fragments/studentfolder/studentnavbarc.jsp"%>
+
+         </c:when>
+         <c:when test="${userBean.userType == 'teacher' && userBean.privilageType == 'user' && userBean.stateType == 'confirmed'}">
+            <%@ include file="/jsp/Fragments/teacherfolder/teachernav(user).jsp"%>
+         </c:when>
+           </c:choose>
+           <h1>All Courses</h1>
     <table>
        <c:forEach items="${usersBean.data }" var="dataPunkt">
             <tr>
