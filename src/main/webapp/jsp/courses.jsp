@@ -17,6 +17,7 @@
          </c:when>
          <c:when test="${userBean.userType == 'teacher' && userBean.privilageType == 'user' && userBean.stateType == 'confirmed'}">
             <%@ include file="/jsp/Fragments/teacherfolder/teachernav(user).jsp"%>
+             <%@ include file="/jsp/Fragments/teacherfolder/coursesSearchBar.jsp"%>
          </c:when>
            </c:choose>
            <h1>All Courses</h1>

@@ -10,6 +10,7 @@
     <body class="bodyimage">
     <%@ include file="/jsp/Fragments/header.jsp"%>
          <%@ include file="/jsp/Fragments/teacherfolder/teachernav(user).jsp"%>
+          <%@ include file="/jsp/Fragments/teacherfolder/studentSearchBar.jsp"%>
           <%@ include file="/jsp/Fragments/teacherfolder/teacherpage(user).jsp"%>
           <h1> All students </h1>
     <table>
