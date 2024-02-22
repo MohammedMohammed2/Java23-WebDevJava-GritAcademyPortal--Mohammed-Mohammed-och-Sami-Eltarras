@@ -1,4 +1,4 @@
-allFromstudenter;SELECT id, CONCAT(fname, ' ', lname) AS studentName FROM studenter ORDER BY id ASC;gritacademy;localhost;3306;user;user
+allFromstudenter;SELECT id, fname, lname  FROM studenter ORDER BY id ASC;gritacademy;localhost;3306;user;user
 allFromkurser;SELECT id, name, YHP, beskrivning FROM kurser ORDER BY id ASC;gritacademy;localhost;3306;user;user
 login;SELECT * FROM studenter WHERE username='{0}' AND password='{1}';gritacademy;localhost;3306;user;user
 llogin;SELECT * FROM lärare WHERE username='{0}' AND password='{1}';gritacademy;localhost;3306;user;user
@@ -10,3 +10,5 @@ allStudentInCoursesAndTeachers;SELECT c.id, s.name,  CONCAT(c.fname, ' ', c.lnam
 
 allStudentInCourseForTeacher;SELECT c.id, c.name, CONCAT(s.fname, ' ', s.lname) AS student ,CONCAT(t.fname, ' ', t.lname) AS teacher FROM kurser c JOIN student_courses sc ON c.id = sc.kurser_id LEFT JOIN studenter s ON sc.student_id = s.id LEFT JOIN lärare_courses tc ON c.id = tc.kurser_id LEFT JOIN lärare t ON tc.lärare_id = t.id WHERE c.id ='{0}';gritacademy;localhost;3306;user;user
 allStudentInCourse;SELECT c.id, c.name, CONCAT(s.fname, ' ', s.lname) AS student ,CONCAT(t.fname, ' ', t.lname) AS teacher FROM kurser c JOIN student_courses sc ON c.id = sc.kurser_id LEFT JOIN studenter s ON sc.student_id = s.id LEFT JOIN lärare_courses tc ON c.id = tc.kurser_id LEFT JOIN lärare t ON tc.lärare_id = t.id WHERE c.name ='{0}';gritacademy;localhost;3306;user;user
+
+searchAStudent;SELECT s.fname,s.lname, c.name FROM studenter s JOIN student_courses sc ON s.id=sc.student_id LEFT JOIN kurser c ON sc.kurser_id=c.id WHERE s.fname='{0}';gritacademy;localhost;3306;user;user

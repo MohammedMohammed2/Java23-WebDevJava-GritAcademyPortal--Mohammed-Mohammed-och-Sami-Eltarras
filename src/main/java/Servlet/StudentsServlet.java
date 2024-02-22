@@ -38,9 +38,17 @@ public class StudentsServlet extends HttpServlet {
 
        else if(userBean.getUserType() == USER_TYPE.teacher && userBean.getprivilageType() == PRIVILAGE_TYPE.user && userBean.getStateType() == STATE_TYPE.confirmed){
 
-            LinkedList data = MysqlConnector.getConnector().selectQuery("allFromstudenter");
-            userBean.setData(data);
-            req.getSession().setAttribute("usersBean", userBean);System.out.println(((Userbean)(req.getSession().getAttribute("usersBean"))).getData());
+            LinkedList<String[]> searchStudent = null;
+            LinkedList<String[]> dataOfSearch = MysqlConnector.getConnector().selectQuery("allFromstudenter",((Userbean) req.getSession().getAttribute("userBean")).getId());
+
+
+            if(req.getParameter("teacherSubmitButton")!=null){
+                searchStudent  = MysqlConnector.getConnector().selectQuery("searchAStudent",req.getParameter("studentName"));
+            }else {
+                searchStudent = dataOfSearch;
+            }
+            req.setAttribute("searchAStudent", searchStudent);
+            req.setAttribute("dataOfSearch", dataOfSearch);
             req.getRequestDispatcher("/jsp/students.jsp").forward(req, resp);
         }
 
