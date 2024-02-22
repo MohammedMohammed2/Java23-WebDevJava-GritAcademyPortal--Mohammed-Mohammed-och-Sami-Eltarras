@@ -14,13 +14,9 @@
           <%@ include file="/jsp/Fragments/teacherfolder/teacherpage(user).jsp"%>
           <h1> All students </h1>
     <table>
-        <tr>
-            <th>first name</th><th>last name</th>
-        </tr>
         <c:forEach items="${usersBean.data }" var="dataPunkt">
-
             <tr>
-                <td>${dataPunkt[1]}</td><td>${ dataPunkt[2] }</td>
+                <td>${dataPunkt[1]}</td>
             </tr>
         </c:forEach>
     </table>
