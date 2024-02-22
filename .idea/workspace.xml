@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3c3f1e8-c914-4c3d-8d16-fc2db2dc0a46" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/jsp/Fragments/studentfolder/studentnavbarc.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/Fragments/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/Fragments/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/Fragments/studentfolder/studentnavbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/Fragments/studentfolder/studentnavbar.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/courses.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/courses.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/LogoutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/WebInit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/Fragments/teacherfolder/teachernav(user).jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/Fragments/teacherfolder/teachernav(user).jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
