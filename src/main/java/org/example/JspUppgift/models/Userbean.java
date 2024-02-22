@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Userbean implements Serializable {
+
+    //making getters and setters to bring info from query
     private String id;
     private USER_TYPE userType;
     private PRIVILAGE_TYPE privilageType = PRIVILAGE_TYPE.user;

@@ -15,7 +15,7 @@ import java.util.LinkedList;
 public class CoursesServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+       //uses a query to bring all courses and shows it in a table
         LinkedList data = MysqlConnector.getConnector().selectQuery("allFromkurser");
         Userbean usersBean = new Userbean();
         usersBean.setData(data);

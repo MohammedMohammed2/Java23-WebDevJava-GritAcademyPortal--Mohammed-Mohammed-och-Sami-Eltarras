@@ -29,7 +29,7 @@ public class UserPageServlet extends HttpServlet {
 
         }
 
-        //gets the user type and sets state ype to conformed
+        //gets the user type and sets state type to conformed
         else if (userBean.getUserType() == USER_TYPE.student && userBean.getprivilageType() == PRIVILAGE_TYPE.user && userBean.getStateType() == STATE_TYPE.confirmed) {
 
             //quary to get all the students in courses and the teachers
@@ -50,7 +50,6 @@ public class UserPageServlet extends HttpServlet {
             req.getRequestDispatcher("jsp/userpage.jsp").forward(req, resp);
 
         }
-        
         else if(userBean.getUserType() == USER_TYPE.teacher && userBean.getprivilageType() == PRIVILAGE_TYPE.user && userBean.getStateType() == STATE_TYPE.confirmed) {
 
             LinkedList<String[]> data = MysqlConnector.getConnector().selectQuery("allStudentInCourseForTeacher", ((Userbean) req.getSession().getAttribute("userBean")).getId());
