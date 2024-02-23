@@ -15,35 +15,26 @@ public class ShowCourseServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //uses a query to bring all courses and shows it in a table
-        LinkedList data = MysqlConnector.getConnector().selectQuery("allFromkurser");
-        Userbean usersBean = new Userbean();
-        usersBean.setData(data);
-
-        req.getSession().setAttribute("usersBean", usersBean);
-        req.getRequestDispatcher("/jsp/courses.jsp").forward(req, resp);
+        doPost(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Userbean userBean = (Userbean) req.getSession().getAttribute("usersBean");
+        Userbean userBean = (Userbean) req.getSession().getAttribute("userBean");
 
-        if(userBean.getUserType() == USER_TYPE.teacher && userBean.getprivilageType() == PRIVILAGE_TYPE.user && userBean.getStateType() == STATE_TYPE.confirmed){
-            LinkedList<String[]> searchStudent = null;
-            LinkedList<String[]> dataOfSearch = MysqlConnector.getConnector().selectQuery("allFromkurser",((Userbean) req.getSession().getAttribute("usersBean")).getId());
+       if (userBean.getUserType() == USER_TYPE.teacher && userBean.getprivilageType() == PRIVILAGE_TYPE.user && userBean.getStateType() == STATE_TYPE.confirmed) {
 
-            if(req.getParameter("teacherSubmitCourse")!=null){
-                searchStudent  = MysqlConnector.getConnector().selectQuery("searchAStudent",req.getParameter("showCourse"));
-            }else {
-                searchStudent = dataOfSearch;
+            LinkedList<String[]> searchCourse = null;
+            LinkedList<String[]> dataOfSearchC = MysqlConnector.getConnector().selectQuery("allFromkurser", ((Userbean) req.getSession().getAttribute("userBean")).getId());
+
+
+            if (req.getParameter("teacherSubmitButton") != null) {
+                searchCourse = MysqlConnector.getConnector().selectQuery("allStudentInCourse", req.getParameter("courseName"));
+            } else {
+                searchCourse = dataOfSearchC;
             }
-
-
-            req.setAttribute("searchAStudent", searchStudent);
-            req.setAttribute("dataOfSearch", dataOfSearch);
-            req.getRequestDispatcher("/jsp/showcourse.jsp").forward(req, resp);
-        }
-        else {
+            req.setAttribute("searchACourse", searchCourse);
+            req.setAttribute("dataOfSearch", dataOfSearchC);
             req.getRequestDispatcher("/jsp/showcourse.jsp").forward(req, resp);
         }
     }

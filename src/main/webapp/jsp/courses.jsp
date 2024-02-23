@@ -9,25 +9,16 @@
     <body class="bodyimage" >
     <%@ include file="/jsp/Fragments/header.jsp"%>
 
-    <c:choose>
-         <c:when test="${userBean.userType == 'student' && userBean.stateType == 'confirmed'}">
-          <%@ include file="/jsp/Fragments/studentfolder/studentnavbarc.jsp"%>
-           </c:when>
-         <c:when test="${userBean.userType == 'teacher' && userBean.privilageType == 'user' && userBean.stateType == 'confirmed'}">
-            <%@ include file="/jsp/Fragments/teacherfolder/teachernav(user).jsp"%>
-             <%@ include file="/jsp/Fragments/teacherfolder/coursesSearchBar.jsp"%>
+           <h1>All Courses</h1>
+
          <table id="data table">
-         <c:forEach items="${searchACourse}" var="dataPunkt">
+         <c:forEach items="${userbean.data}" var="dataPunkt">
               <tr>
              <c:forEach items="${dataPunkt}" var="dataPunktKolumn">
                      <td>${dataPunktKolumn}</td>
              </c:forEach>
               </tr>
          </c:forEach>
-         </c:when>
-           </c:choose>
-           <h1>All Courses</h1>
-
     <%@ include file="/jsp/Fragments/footer.jsp"%>
     </body>
 </html>
