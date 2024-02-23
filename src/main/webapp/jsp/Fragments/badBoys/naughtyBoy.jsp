@@ -7,6 +7,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/style.css">
     </head>
-    <body><h1>no no you naughty naughty</h1></body>
+    <body><h1>Access denied! you are not a teacher</h1></body>
      <button onclick=location.href='/userpage' style="margin-left:auto;margin-right:auto;">Dip out</button>
     </html>
