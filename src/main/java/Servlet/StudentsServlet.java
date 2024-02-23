@@ -27,20 +27,13 @@ public class StudentsServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         Userbean userBean = (Userbean) req.getSession().getAttribute("userBean");
 
         if (userBean==null){
-
             req.getRequestDispatcher("jsp/login.jsp").forward(req, resp);
-
-        }
-
-       else if(userBean.getUserType() == USER_TYPE.teacher && userBean.getprivilageType() == PRIVILAGE_TYPE.user && userBean.getStateType() == STATE_TYPE.confirmed){
-
+        } else if(userBean.getUserType() == USER_TYPE.teacher && userBean.getprivilageType() == PRIVILAGE_TYPE.user && userBean.getStateType() == STATE_TYPE.confirmed){
             LinkedList<String[]> searchStudent = null;
             LinkedList<String[]> dataOfSearch = MysqlConnector.getConnector().selectQuery("allFromstudenter",((Userbean) req.getSession().getAttribute("userBean")).getId());
-
 
             if(req.getParameter("teacherSubmitButton")!=null){
                 searchStudent  = MysqlConnector.getConnector().selectQuery("searchAStudent",req.getParameter("studentName"));
