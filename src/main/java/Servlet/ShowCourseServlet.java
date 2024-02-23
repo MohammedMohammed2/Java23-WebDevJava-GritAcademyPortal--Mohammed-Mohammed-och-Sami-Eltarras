@@ -37,7 +37,7 @@ public class ShowCourseServlet extends HttpServlet {
             }else {
                 searchStudent = dataOfSearch;
             }
-            
+
 
             req.setAttribute("searchAStudent", searchStudent);
             req.setAttribute("dataOfSearch", dataOfSearch);
