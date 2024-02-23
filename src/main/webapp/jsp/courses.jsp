@@ -13,21 +13,22 @@
     <c:choose>
          <c:when test="${userBean.userType == 'student' && userBean.stateType == 'confirmed'}">
           <%@ include file="/jsp/Fragments/studentfolder/studentnavbarc.jsp"%>
-
-         </c:when>
+           </c:when>
          <c:when test="${userBean.userType == 'teacher' && userBean.privilageType == 'user' && userBean.stateType == 'confirmed'}">
             <%@ include file="/jsp/Fragments/teacherfolder/teachernav(user).jsp"%>
              <%@ include file="/jsp/Fragments/teacherfolder/coursesSearchBar.jsp"%>
+         <table id="data table">
+         <c:forEach items="${searchACourse}" var="dataPunkt">
+              <tr>
+             <c:forEach items="${dataPunkt}" var="dataPunktKolumn">
+                     <td>${dataPunktKolumn}</td>
+             </c:forEach>
+              </tr>
+         </c:forEach>
          </c:when>
            </c:choose>
            <h1>All Courses</h1>
-    <table>
-       <c:forEach items="${usersBean.data }" var="dataPunkt">
-            <tr>
-                <td>${dataPunkt[1]}</td><td>${ dataPunkt[2] }</td><td>${ dataPunkt[3] }</td>
-            </tr>
-       </c:forEach>
-    </table>
+
     <%@ include file="/jsp/Fragments/footer.jsp"%>
     </body>
 </html>
